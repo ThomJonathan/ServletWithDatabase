@@ -1,5 +1,12 @@
 <%--
   Created by IntelliJ IDEA.
+  User: HART DOVIKO
+  Date: 9/10/2025
+  Time: 1:47 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%--
+  Created by IntelliJ IDEA.
   User: mac
   Date: 10/09/2025
   Time: 10:19
@@ -9,13 +16,24 @@
 <html>
 <head>
     <title>Signup</title>
+    <style>
+        body { font-family: Arial, sans-serif; background:#0f172a; color:#e5e7eb; display:flex; justify-content:center; align-items:center; height:100vh; margin:0; }
+        .login-box { background:#111827; padding:30px; border-radius:12px; box-shadow:0 5px 20px rgba(0,0,0,.3); width:300px; }
+        .login-box h2 { text-align:center; margin-bottom:20px; color:#22d3ee; }
+        input[type=text], input[type=password] { width:100%; padding:10px; margin:8px 0; border:1px solid #374151; border-radius:8px; background:#1f2937; color:#fff; }
+        input[type=submit] { width:100%; background:#22d3ee; color:#001; padding:10px; border:none; border-radius:8px; font-weight:bold; cursor:pointer; }
+        input[type=submit]:hover { filter:brightness(0.95); }
+        select[name=role] {width:100%; padding:10px; margin:8px 0; border:1px solid #374151; border-radius:8px; background:#1f2937; color:#fff;}
+    </style>
 </head>
 <body>
-  <form action="signup" method="post">
+
+<div class='login-box'>
+<form action="signup" method="post">
     <h1>Signup</h1>
 
     <% if (request.getParameter("error") != null) { %>
-        <p style="color:red;">Signup error: <%= request.getParameter("error") %></p>
+    <p style="color:red;">Signup error: <%= request.getParameter("error") %></p>
     <% } %>
 
     <label>Username</label>
@@ -28,8 +46,9 @@
         <option value="ADMIN">Admin</option>
     </select><br>
     <input type="submit" value="Signup">
-  </form>
+</form>
 
-  <p>Already have an account? <a href="Login.jsp">Login</a></p>
+<p>Already have an account? <a href="Login.jsp" style="color: #22d3ee">Login</a></p>
+</div>
 </body>
 </html>
