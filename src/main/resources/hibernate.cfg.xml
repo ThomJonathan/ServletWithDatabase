@@ -1,0 +1,31 @@
+
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/Hibernate?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+
+        <!-- Connection provider (explicitly set to avoid service lookup issues) -->
+        <property name="hibernate.connection.provider_class">org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl</property>
+
+        <!-- Connection pool settings -->
+        <property name="hibernate.connection.pool_size">5</property>
+
+        <!-- SQL settings -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- Schema management - CREATE tables automatically -->
+    <property name="hibernate.hbm2ddl.auto">update</property>
+
+
+        <!-- Disable JTA (not needed for simple applications) -->
+        <property name="hibernate.transaction.jta.platform">none</property>
+
+    </session-factory>
+</hibernate-configuration>
+
